@@ -38,12 +38,13 @@ public class FuncionarioService {
                 System.out.println("Departamento: " + f.getDepartamento().getNomeDepartamento());
                 System.out.println("Cargo: " + f.getCargo().getNomeCargo());
 
+            }else {
+                System.out.println("Funcionário com o nome '" + nomeFuncionario + "' não encontrado");
             }
         }
-        System.out.println("Funcionário com o nome '" + nomeFuncionario + "' não encontrado");
     }
 
-    public void atualizarFuncionario(String nomeAntigo, Funcionario funcionarioAtualizado, List<Funcionario> funcionarios) {
+    public void atualizarFuncionario(String nomeAntigo, Funcionario funcionarioAtualizado, List<Funcionario> funcionarios) {// ainda sem funcionar
         System.out.println("----- Atualizar Funcionário -----");
         System.out.print("Informe o nome do funcionário a ser atualizado: ");
 

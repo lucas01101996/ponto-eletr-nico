@@ -4,15 +4,15 @@ import java.util.Date;
 import java.util.Objects;
 
 public class RegistroPonto {
-
+    private static  int autoIncrement = 1;
     private int id;
     private Funcionario funcionario;
     private Date dataHoraSaida;
     private Date dataHoraEntrada;
 
 
-    public RegistroPonto(int id, Funcionario funcionario, Date dataHoraSaida, Date dataHoraEntrada) {
-        this.id = id;
+    public RegistroPonto(Funcionario funcionario, Date dataHoraEntrada,Date dataHoraSaida) {
+        this.id = autoIncrement++;
         this.funcionario = funcionario;
         this.dataHoraSaida = dataHoraSaida;
         this.dataHoraEntrada = dataHoraEntrada;

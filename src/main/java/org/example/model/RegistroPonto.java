@@ -1,6 +1,7 @@
 package org.example.model;
 
 import java.util.Date;
+import java.util.Objects;
 
 public class RegistroPonto {
 
@@ -47,5 +48,18 @@ public class RegistroPonto {
 
     public void setDataHoraEntrada(Date dataHoraEntrada) {
         this.dataHoraEntrada = dataHoraEntrada;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        RegistroPonto that = (RegistroPonto) o;
+        return id == that.id;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
     }
 }

@@ -3,17 +3,28 @@ package org.example.model;
 import java.util.Objects;
 
 public class Funcionario {
+    private static  int autoIncrement = 1;
 
     private int id;
     private String name;
-    private String cargo;
-    private String departamento;
+    private Cargo cargo;
+    private Departamento departamento;
 
-    public Funcionario(int id, String name, String cargo, String departamento) {
-        this.id = id;
+    public Funcionario(String name) {
+        this.id = autoIncrement++;
+        this.name = name;
+    }
+
+    public Funcionario(int id, String name, Cargo cargo, Departamento departamento) {
+        this.id = autoIncrement++;
         this.name = name;
         this.cargo = cargo;
         this.departamento = departamento;
+    }
+
+    public Funcionario() {
+        this.departamento = new Departamento();
+        this.cargo = new Cargo();
     }
 
     public int getId() {
@@ -32,19 +43,19 @@ public class Funcionario {
         this.name = name;
     }
 
-    public String getCargo() {
+    public Cargo getCargo() {
         return cargo;
     }
 
-    public void setCargo(String cargo) {
+    public void setCargo(Cargo cargo) {
         this.cargo = cargo;
     }
 
-    public String getDepartamento() {
+    public Departamento getDepartamento() {
         return departamento;
     }
 
-    public void setDepartamento(String departamento) {
+    public void setDepartamento(Departamento departamento) {
         this.departamento = departamento;
     }
 
